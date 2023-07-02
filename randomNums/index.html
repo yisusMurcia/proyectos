@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de números aleatorios</title>
+</head>
+<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <header>
+        <h1 id="logo">
+            <strong id="program">program</strong>
+            mind
+        </h1>
+        <h1 class="title"> &#x1F3B2; Generador de números aleatorios</h1>
+    </header>
+    <br>
+    <p>
+        Este fue el primer proyecto que realicé y ahora quiero compartirlo contigo. Puedes seleccionar el
+        intervalo de números y elegir cuántas veces deseas que se repita el resultado.
+    </p>
+    <div>
+        <input id="numOfThrows" type="number" placeholder="Lanzamientos" value="2">
+        <span>
+            <p> Intervalo de números: </p>
+            <input id="minNum" type="number" placeholder="Inicia desde" value="1">
+            <input id="maxNum" type="number" placeholder="Llega hasta" value="6">
+        </span>
+        <button>Generar númeos</button>
+    </div>
+    <p id="result">Los resultaso se mostrarán aquí</p>
+    <script>
+        let numOfThrows= document.getElementById("numOfThrows");
+        let minNum= document.getElementById("minNum");
+        let maxNum= document.getElementById("maxNum");
+        let checkInputs=()=>{
+            throwValue= Math.round(numOfThrows.value);
+            if (throwValue<=0){
+                numOfThrows.value= 1;
+            };
+            if(minNum.value== ""){
+                minNum.value= 0;
+            };
+            if(+maxNum.value<= +minNum.value || maxNum.value== ""){
+                maxNum.value= +minNum.value+1;
+            };
+        };
+        minNum.addEventListener("change", ()=>{checkInputs();});
+        maxNum.addEventListener("change", ()=>{checkInputs();})
+        numOfThrows.addEventListener("change", ()=>{checkInputs})
+        let resultP= document.getElementById("result");
+        let button= document.getElementsByTagName("button")[0];
+        let generateNums=()=>{
+            let throws= +numOfThrows.value;
+            let max= +maxNum.value;
+            let min= +minNum.value;
+            let results=[];
+            for (let i=0; i<throws; i++){
+                let num= Math.round(Math.random()*(max- min)+min);
+                results.push(num);
+            };
+            let total= results.reduce((sum, num)=>{
+                return sum+num;
+            });
+            resultP.innerHTML= "Suma de los números generados: "+ total+"<br> Números generados: <br>"+ results.join("<br>");
+        };
+        button.addEventListener("click", ()=>{
+            checkInputs();
+            generateNums();
+        });
+    </script>
+</body>
+</html>

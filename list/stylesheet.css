@@ -1,0 +1,109 @@
+html{
+    font-family: "comfortaa", 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #1c1c1c;
+}
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url(https://i.imgur.com/udu4V57.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    padding: 40px;
+    justify-content: center;
+    border: solid 2px #8591c8;
+}
+h1{
+    color: #2beaccfd;
+    text-align: center;
+    background-color: black;
+    border-radius: 20px;
+    padding: 10px;
+}
+p{
+    color: #8591c8;
+    text-align: justify;
+    background-color: black;
+    padding: 10px;
+    border-radius: 20px;
+}
+div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border: solid 3px purple;
+    background-color: black;
+    padding: 10px;
+    gap: 10px;
+}
+input{
+    color: orangered;
+    background-color: #1c1c1c;
+    border: solid 3px #2beaccfd;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 5px;
+    align-self: center;
+}
+input::-webkit-input-placeholder{
+    color: orangered;
+    font-family: "comfortaa", 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+input:focus {
+    border-width: 2px;
+    border-color: blue;
+    outline: none;
+}
+button{
+    font-family: "comfortaa", 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #2beaccfd;
+    background-color: #383838;
+    border-color: #8591c8;
+    border-width: 3px;
+    border-radius: 10px;
+    padding: 8px;
+    align-self: center;
+}
+ul{
+    background-color: black;
+    color: #8591c8;
+    border-radius: 20px;
+    padding: 10px;
+    list-style-position: inside;
+}
+#logo{
+    display: flex;
+    flex-grow: 0;
+    align-items: center;
+    font-size: 200%;
+    color: #383838;
+    padding: 15px;
+    margin: 3px;
+    background-color: #2beaccfd;
+    border: solid orangered 2px;
+    border-radius: 40px;
+}
+#program{
+    color: purple;
+}
+.title{
+    color: #383838;
+    text-shadow: 1px 2px  orangered;
+    background-color: #8591c8;
+    border: solid 2px #383838;
+    border-radius: 40px;
+    padding: 10px;
+    margin: 10px 40px 5px;
+}
+#inputConsole{
+    display: flex;
+    border-radius: 50px 50px 0 0;
+    border-bottom-color: #1c1c1c;
+    justify-content: center;
+    padding: 12px;
+}
+.controlPanel{
+    border-radius: 0 0 50px 50px;
+    border-top: none;
+}
